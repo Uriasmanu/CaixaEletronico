@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CaixaEletronico.Models
 {
-    internal class AdicionaContaDTO
+    internal class LoginContaDTO
     {
         public string NameTitular { get; set; }
         public int Senha { get; set; }

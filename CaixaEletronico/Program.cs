@@ -3,7 +3,7 @@
 using CaixaEletronico.Models;
 using System.Linq.Expressions;
 
-var conta = new AdicionaContaDTO();
+var conta = new LoginContaDTO();
 int opcao;
 
 Console.WriteLine("Bem-vindo ao Caixa Eletrônico");

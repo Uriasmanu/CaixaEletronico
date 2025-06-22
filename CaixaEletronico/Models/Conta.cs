@@ -10,9 +10,9 @@ namespace CaixaEletronico.Models
     {
         public Guid Id { get; set; }
         public int NumeroConta { get; set; }
-        public string NameTitular { get; set; }
+        public string NomeTitular { get; set; } = string.Empty;
+        public string Senha { get; set; } = string.Empty;
         public double Saldo { get; set; }
-        public int Senha { get; set; }
         
     }
 }
