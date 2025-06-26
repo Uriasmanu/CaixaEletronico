@@ -8,6 +8,7 @@ namespace CaixaEletronico.Models
 {
     internal class Conta
     {
+        private static Random random = new Random();
         public Guid Id { get; set; }
         public int NumeroConta { get; set; }
         public string NomeTitular { get; set; } = string.Empty;

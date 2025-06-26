@@ -1,6 +1,4 @@
-﻿
-
-using CaixaEletronico.Models;
+﻿using CaixaEletronico.Models;
 using System.Linq.Expressions;
 
 var conta = new LoginContaDTO();
