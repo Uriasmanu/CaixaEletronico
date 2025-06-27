@@ -1,7 +1,13 @@
 ﻿using CaixaEletronico.Models;
-using System.Linq.Expressions;
+using CaixaEletronico.Services;
+using SQLitePCL;
+
+
+Batteries.Init();
+
 
 var conta = new LoginContaDTO();
+var registraConta = new RegistraConta();
 int opcao;
 
 Console.WriteLine("Bem-vindo ao Caixa Eletrônico");
@@ -10,7 +16,7 @@ Console.WriteLine("\n*******************************");
 Console.WriteLine("\n1 - Para se Cadastrar");
 Console.WriteLine("\n2 - Para Consultar Saldo");
 Console.WriteLine("\n3 - Para Sacar");
-Console.WriteLine("\n1 - Para Tranferir");
+Console.WriteLine("\n4 - Para Tranferir");
 Console.WriteLine("\n*******************************");
 opcao = int.Parse(Console.ReadLine());
 
@@ -19,7 +25,17 @@ opcao = int.Parse(Console.ReadLine());
 switch (opcao)
 {
     case 1:
-        Console.WriteLine($"\nVocê escolheu a opção {opcao} e será direcionado à tela de Cadastro");
+        Console.Clear();
+        Console.WriteLine("\nTela de Cadastro de Conta");
+
+        Console.WriteLine("Digite o nome do titula: ");
+        string nomeTitular = Console.ReadLine();
+
+        Console.WriteLine("Digite a senha, ela deve ter 4 digitos: ");
+        string senha = Console.ReadLine();
+
+        registraConta.CriaConta(nomeTitular, senha);
+
         break;
 
     case 2:
@@ -38,6 +54,3 @@ switch (opcao)
         Console.WriteLine("Opção inválida, escolha novamente.");
         break;
 }
-
-
-
