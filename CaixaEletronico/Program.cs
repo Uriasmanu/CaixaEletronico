@@ -7,7 +7,8 @@ Batteries.Init();
 
 
 var conta = new LoginContaDTO();
-var registraConta = new RegistraConta();
+var dbPath = "caixaEletronico.db";
+var registraConta = new RegistraConta(dbPath);
 int opcao;
 
 Console.WriteLine("Bem-vindo ao Caixa Eletrônico");

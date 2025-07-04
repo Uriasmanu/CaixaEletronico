@@ -6,6 +6,12 @@ namespace CaixaEletronico.Services
 {
     public class RegistraConta
     {
+        private readonly string _dbPath;
+        public RegistraConta(string dbPath)
+        {
+            _dbPath = dbPath;
+        }
+
         public void CriaConta(string nomeTitular, string senha)
         {
             // Validações
@@ -25,7 +31,7 @@ namespace CaixaEletronico.Services
             var numeroConta = new Random().Next(100000, 999999);
             var saldo = 0.0;
 
-            using (var connection = new SqliteConnection("Data Source=caixaEletronico.db"))
+            using (var connection = new SqliteConnection($"Data Source={_dbPath}"))
             {
                 connection.Open();
 
